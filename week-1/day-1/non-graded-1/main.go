@@ -53,7 +53,7 @@ func array1() {
 func array2() {
 	arr := [3]map[string]string{}
 	
-	for i := 0; i < 3; i++ {
+	for i := range arr {
 		var name, gender string
 		fmt.Print("Name\t: ")
 		fmt.Scanln(&name)
@@ -65,7 +65,7 @@ func array2() {
 	}
 	fmt.Printf("Before\t: %v\n", arr)
 
-	for i := 0; i < 3; i++ {
+	for i := range arr {
 		if arr[i]["gender"] == "M" {
 			arr[i]["name"] = "Mr. " + arr[i]["name"]
 		} else if arr[i]["gender"] == "F" {
