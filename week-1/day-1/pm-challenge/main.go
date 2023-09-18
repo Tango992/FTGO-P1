@@ -27,5 +27,4 @@ func main() {
 	
 	fmt.Printf("%.6f\n", k)
 	fmt.Printf("%E\n", k)
-
 }
