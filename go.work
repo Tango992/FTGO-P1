@@ -1,0 +1,7 @@
+go 1.21.1
+
+use (
+	./week-1/day-1/hello
+	./week-1/day-1/non-graded-1
+	./week-1/day-1/pm-challenge
+)
