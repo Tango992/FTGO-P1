@@ -6,11 +6,12 @@ import (
 
 
 func main() {
-	// variable1()
-	// variable2()
-	// cli()
-	// array1()
+	variable1()
+	variable2()
+	cli()
+	array1()
 	array2()
+	array3()
 }
 
 
@@ -48,7 +49,7 @@ func array1() {
 	fmt.Printf("Panjang slice people: %v\n\n", len(people))
 }
 
-
+// With user input
 func array2() {
 	arr := [3]map[string]string{}
 	
@@ -62,6 +63,38 @@ func array2() {
 
 		arr[i] = map[string]string{"name": name, "gender": gender}
 	}
+	fmt.Printf("Before\t: %v\n", arr)
+
+	for i := range arr {
+		if arr[i]["gender"] == "M" {
+			arr[i]["name"] = "Mr. " + arr[i]["name"]
+		} else if arr[i]["gender"] == "F" {
+			arr[i]["name"] = "Mr. " + arr[i]["name"]
+		}
+	}
+	fmt.Printf("After\t: %v\n", arr)
+}
+
+// Alternative without user input
+func array3() {
+	arr := [3]map[string]string{}
+
+	char1 := map[string]string {
+		"name": "Hank",
+		"gender": "M",
+	}
+	char2 := map[string]string {
+		"name": "Heisenberg",
+		"gender": "M",
+	}
+	char3 := map[string]string {
+		"name": "Skyler",
+		"gender": "M",
+	}
+	
+	arr[0] = char1
+	arr[1] = char2
+	arr[2] = char3
 	fmt.Printf("Before\t: %v\n", arr)
 
 	for i := range arr {
