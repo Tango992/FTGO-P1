@@ -2,15 +2,14 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 
 func main() {
-	variable1()
-	variable2()
-	cli()
-	array1()
+	// variable1()
+	// variable2()
+	// cli()
+	// array1()
 	array2()
 }
 
@@ -61,7 +60,7 @@ func array2() {
 		fmt.Scanln(&gender)
 		fmt.Println()
 
-		arr[i] = map[string]string{"key": strconv.Itoa(i), "name": name, "gender": gender}
+		arr[i] = map[string]string{"name": name, "gender": gender}
 	}
 	fmt.Printf("Before\t: %v\n", arr)
 
