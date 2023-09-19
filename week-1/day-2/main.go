@@ -6,6 +6,24 @@ import (
 )
 
 func main() {
+	// switchCase()
+	statistic()
+}
+
+func statistic() {
+	var sum int
+	slice := []int{1,2,3,4,3,2,1,2,3,4,3,2,1}
+	length := len(slice)
+
+	for _, i := range slice {
+		sum += i
+	}
+
+	avg := float32(sum) / float32(length)
+	fmt.Printf("%.3f\n", avg)
+}
+
+func switchCase() {
 	response, err := http.Get("http://www.linkedin.com")
 
 	if err != nil {
