@@ -4,7 +4,9 @@ use (
 	./week-1/day-1/hello
 	./week-1/day-1/non-graded-1
 	./week-1/day-1/pm-challenge
-	./week-1/day-2
+	./week-1/day-2/excercises
+	./week-1/day-2/func
 	./week-1/day-2/non-graded-2
 	./week-1/day-2/non-graded-3
+	./week-1/day-2/non-graded-4
 )
