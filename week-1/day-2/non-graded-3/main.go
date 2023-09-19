@@ -7,46 +7,7 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("List:")
-	fmt.Println("1. Looping 1")
-	fmt.Println("2. Looping 2")
-	fmt.Println("3. Palindrome")
-	fmt.Println("4. XOXO")
-	fmt.Println("5. Bubble Sort")
-	fmt.Println("6. Asterisk 1")
-	fmt.Println("7. Asterisk 2")
-	fmt.Println("8. Asterisk 3")
-	fmt.Println("9. Astersik 4")
-	fmt.Println("10. Astersik 4 (Alternatif)")
-	fmt.Print("Input nomor: ")
-	scanner.Scan()
-	fmt.Println()
-	i := scanner.Text()
-	switch i {
-	case "1":
-		looping1()
-	case "2":
-		looping2()
-	case "3":
-		logic1()
-	case "4":
-		logic2()
-	case "5":
-		logic3()
-	case "6":
-		logic4()
-	case "7":
-		logic5()
-	case "8":
-		logic6()
-	case "9":
-		logic7()
-	case "10":
-		logic8()
-	default:
-		fmt.Println("Input nomor di luar range")
-	}
+	menu()
 }
 
 func looping1() {
@@ -231,5 +192,48 @@ func logic8() {
 			fmt.Print("*")
 		}
 		fmt.Println()
+	}
+}
+
+func menu() {
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("List:")
+	fmt.Println("1. Looping 1")
+	fmt.Println("2. Looping 2")
+	fmt.Println("3. Palindrome")
+	fmt.Println("4. XOXO")
+	fmt.Println("5. Bubble Sort")
+	fmt.Println("6. Asterisk 1")
+	fmt.Println("7. Asterisk 2")
+	fmt.Println("8. Asterisk 3")
+	fmt.Println("9. Astersik 4")
+	fmt.Println("10. Astersik 4 (Alternatif)")
+	fmt.Print("Input nomor: ")
+	scanner.Scan()
+	fmt.Println()
+	i := scanner.Text()
+	switch i {
+	case "1":
+		looping1()
+	case "2":
+		looping2()
+	case "3":
+		logic1()
+	case "4":
+		logic2()
+	case "5":
+		logic3()
+	case "6":
+		logic4()
+	case "7":
+		logic5()
+	case "8":
+		logic6()
+	case "9":
+		logic7()
+	case "10":
+		logic8()
+	default:
+		fmt.Println("Input nomor di luar range")
 	}
 }
