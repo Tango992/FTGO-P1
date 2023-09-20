@@ -85,5 +85,7 @@ func StructHero2() {
 			Attack: 150,
 		},
 	}
-	helpers.Battle(hero2, hero1)
+	fmt.Printf("%v Health Before \t: %v\n", hero1.Name, hero1.HealthPoint)
+	helpers.Battle(&hero2, &hero1)
+	fmt.Printf("%v Health After \t: %v\n", hero1.Name, hero1.HealthPoint)
 }

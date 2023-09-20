@@ -1,19 +1,18 @@
 package helpers
 
-import (
-	"fmt"
-	"math/rand"
-)
+import "math/rand"
 
-func (p *Person) AddYear() {
-	p.Age++
-	if p.Age >= 50 {
-		p.Job = "Retired"
-	}
+type Weapon struct {
+	Attack int
 }
 
-func (p Person) GetInfo() {
-	fmt.Printf("Halo %v, usia %v tahun, pekerjaan %v\n", p.Name, p.Age, p.Job)
+type Hero struct {
+	Name string
+	BaseAttack int
+	Defence int
+	CriticalDamage int
+	HealthPoint int
+	Weapons Weapon
 }
 
 func (p Hero) CountDamage() int {
@@ -31,3 +30,6 @@ func (receiver *Hero) IsAttackedBy(attacker Hero) {
 	}
 }
 
+func Battle(attacker *Hero, receiver *Hero) {
+	receiver.IsAttackedBy(*attacker)
+}
