@@ -9,4 +9,7 @@ use (
 	./week-1/day-2/non-graded-2
 	./week-1/day-2/non-graded-3
 	./week-1/day-2/non-graded-4
+	./week-1/day-3/excercises
+	./week-1/day-3/importexport
+	./week-1/day-3/non-graded-5
 )
