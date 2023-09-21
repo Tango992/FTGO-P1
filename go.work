@@ -12,4 +12,7 @@ use (
 	./week-1/day-3/excercises
 	./week-1/day-3/importexport
 	./week-1/day-3/non-graded-5
+	./week-1/day-4/quiz
+	./week-1/day-5/non-graded-6/airport_robot
+	./week-1/day-5/non-graded-6/engineer
 )
