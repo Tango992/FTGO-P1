@@ -87,15 +87,20 @@ func rentBook(books []Book) {
 			fmt.Println("Book input does not match!")
 			continue
 		}
-
-		fmt.Print("\nDo you want to rent another book? (yes/no): ")
-		scanner.Scan()
-		cont := scanner.Text()
-		if cont == "yes" {
-			continue
-		} else {
-			fmt.Println("Thank you for using the Library Book Rental System. Goodbye!")
-			os.Exit(0)
+		
+		for {
+			fmt.Print("\nDo you want to rent another book? (yes/no): ")
+			scanner.Scan()
+			cont := scanner.Text()
+			if cont == "yes" {
+				break
+			} else if cont == "no" {
+				fmt.Println("Thank you for using the Library Book Rental System. Goodbye!")
+				os.Exit(0)
+			} else {
+				fmt.Println("Invalid input!")
+				continue
+			}
 		}
 	}
 }
