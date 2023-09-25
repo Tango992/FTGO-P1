@@ -18,4 +18,7 @@ use (
 	./week-1/day-5/interface2
 	./week-1/day-5/non-graded-6/airport_robot
 	./week-1/day-5/non-graded-6/engineer
+	./week-2/day-1/preview/biodata
+	./week-2/day-1/preview/calculator
+	./week-2/day-1/preview/ganjilgenap
 )
