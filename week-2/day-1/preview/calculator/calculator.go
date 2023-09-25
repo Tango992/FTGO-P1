@@ -15,14 +15,12 @@ func main() {
 }
 
 func calculator(operation string, value1 string, value2 string) {
-	input1, err1 := strconv.Atoi(value1)
-	input2, err2 := strconv.Atoi(value2)
+	i, err1 := strconv.ParseFloat(value1, 64)
+	j, err2 := strconv.ParseFloat(value2, 64)
 	if err1 != nil || err2 != nil {
 		fmt.Println("Input is not an integer!")
 		os.Exit(1)
 	}
-	i := float64(input1)
-	j := float64(input2)
 
 	switch operation {
 	case "add":
