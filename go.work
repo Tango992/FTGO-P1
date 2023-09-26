@@ -21,10 +21,14 @@ use (
 	./week-2/day-1/preview/biodata
 	./week-2/day-1/preview/calculator
 	./week-2/day-1/preview/ganjilgenap
+	./week-2/day-2/excercise/channels/buffer-unbuffered/buffered
+	./week-2/day-2/excercise/channels/buffer-unbuffered/unbuffered
 	./week-2/day-2/excercise/channels/calculator
 	./week-2/day-2/excercise/channels/calculator2
 	./week-2/day-2/excercise/channels/calculator3
+	./week-2/day-2/excercise/channels/calculator4
 	./week-2/day-2/excercise/channels/introduce
+	./week-2/day-2/excercise/defer
 	./week-2/day-2/excercise/goroutines/channel-image-processing
 	./week-2/day-2/excercise/goroutines/factorial
 	./week-2/day-2/excercise/goroutines/fundamental
