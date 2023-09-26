@@ -25,9 +25,9 @@ func main() {
 	for i, image := range images {
 		go processImage(i, image, channel)
 	}
-	fmt.Println(<- channel)
-	fmt.Println(<- channel)
-	fmt.Println(<- channel)
-	fmt.Println(<- channel)
+
+	for i := 0; i < len(images); i++ {
+		fmt.Println(<- channel)
+	}
 	fmt.Printf("Elapsed time: %v\n", time.Since(now))
 }
