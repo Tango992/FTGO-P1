@@ -41,5 +41,4 @@ func fib(n int){
 		fmt.Println(b)
 		return
 	}
-	
 }
