@@ -21,4 +21,5 @@ use (
 	./week-2/day-1/preview/biodata
 	./week-2/day-1/preview/calculator
 	./week-2/day-1/preview/ganjilgenap
+	./week-2/day-2/excercise/fundamental
 )
