@@ -37,7 +37,16 @@ use (
 	./week-2/day-2/excercise/goroutines/sendEmail
 	./week-2/day-2/excercise/goroutines/sendEmail2
 	./week-2/day-2/excercise/goroutines/sendEmailSync
+	./week-2/day-2/non-graded-7/download-manager
 	./week-2/day-2/non-graded-7/goroutine1
 	./week-2/day-2/non-graded-7/goroutine2
 	./week-2/day-2/non-graded-7/goroutine3
+	./week-2/day-2/non-graded-7/task-scheduler
+	./week-2/day-2/non-graded-8/channel1
+	./week-2/day-2/non-graded-8/channel2
+	./week-2/day-2/non-graded-8/channel3
+	./week-2/day-2/non-graded-8/sum-of-squares
+	./week-2/day-2/non-graded-8/word-count
+	./week-2/day-2/non-graded-9/defer1
+	./week-2/day-2/non-graded-9/defer2
 )
