@@ -21,5 +21,19 @@ use (
 	./week-2/day-1/preview/biodata
 	./week-2/day-1/preview/calculator
 	./week-2/day-1/preview/ganjilgenap
-	./week-2/day-2/excercise/fundamental
+	./week-2/day-2/excercise/channels/calculator
+	./week-2/day-2/excercise/channels/calculator2
+	./week-2/day-2/excercise/channels/calculator3
+	./week-2/day-2/excercise/channels/introduce
+	./week-2/day-2/excercise/goroutines/channel-image-processing
+	./week-2/day-2/excercise/goroutines/factorial
+	./week-2/day-2/excercise/goroutines/fundamental
+	./week-2/day-2/excercise/goroutines/image-processing
+	./week-2/day-2/excercise/goroutines/logging
+	./week-2/day-2/excercise/goroutines/sendEmail
+	./week-2/day-2/excercise/goroutines/sendEmail2
+	./week-2/day-2/excercise/goroutines/sendEmailSync
+	./week-2/day-2/non-graded-7/goroutine1
+	./week-2/day-2/non-graded-7/goroutine2
+	./week-2/day-2/non-graded-7/goroutine3
 )
