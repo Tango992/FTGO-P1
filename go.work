@@ -49,4 +49,5 @@ use (
 	./week-2/day-2/non-graded-8/word-count
 	./week-2/day-2/non-graded-9/defer1
 	./week-2/day-2/non-graded-9/defer2
+	./week-2/day-3/excercise/password-length
 )
