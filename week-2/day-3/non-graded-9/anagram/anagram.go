@@ -11,10 +11,6 @@ import (
 )
 
 func main() {
-	anagram()
-}
-
-func anagram() {
 	defer catchErr()
 	
 	scanner := bufio.NewScanner(os.Stdin)
