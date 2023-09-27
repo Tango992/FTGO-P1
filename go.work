@@ -50,4 +50,11 @@ use (
 	./week-2/day-2/non-graded-9/defer1
 	./week-2/day-2/non-graded-9/defer2
 	./week-2/day-3/excercise/password-length
+	./week-2/day-3/excercise/profiling/case1
+	./week-2/day-3/excercise/profiling/case2
+	./week-2/day-3/non-graded-9/anagram
+	./week-2/day-3/non-graded-9/kalkulator
+	./week-2/day-3/non-graded-9/log-analyzer
+	./week-2/day-3/presentation/anagram-pprof
+	./week-2/day-3/presentation/kalkulator-pprof
 )
