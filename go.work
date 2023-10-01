@@ -57,4 +57,6 @@ use (
 	./week-2/day-3/non-graded-9/log-analyzer
 	./week-2/day-3/presentation/anagram-pprof
 	./week-2/day-3/presentation/kalkulator-pprof
+	./week-3/day-1/preview/file-processing
+	./week-3/day-1/preview/word-count
 )

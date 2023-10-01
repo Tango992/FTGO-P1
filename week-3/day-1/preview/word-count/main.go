@@ -12,7 +12,7 @@ func main() {
 	var wg sync.WaitGroup
 	var mutex sync.Mutex
 
-	file, err := os.Open("sample.txt")
+	file, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err.Error())
 	}
