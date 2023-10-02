@@ -12,6 +12,11 @@ func main() {
 	var wg sync.WaitGroup
 	var mutex sync.Mutex
 
+	if len(os.Args) < 2 {
+		fmt.Println("Missing command line argument")
+		os.Exit(1)
+	}
+
 	file, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err.Error())
@@ -30,17 +35,19 @@ func scanLine(file *os.File, wg *sync.WaitGroup, mutex *sync.Mutex) map[string]i
 	for scanner.Scan() {
 		line := scanner.Text()
 		sliceOfWords := strings.Fields(line)
-		for _, word := range sliceOfWords {
-			wg.Add(1)
-			go func(s string){
-				defer wg.Done()
-				mutex.Lock()
-				result[s]++
-				mutex.Unlock()
-			}(word)
-		}
+		wg.Add(1)
+		go updateMap(sliceOfWords, &result, wg, mutex)
 	}
 	return result
+}
+
+func updateMap(sliceOfWords []string, result *map[string]int, wg *sync.WaitGroup, mutex *sync.Mutex){
+	defer wg.Done()
+	for _, word := range sliceOfWords {
+		mutex.Lock()
+		(*result)[word]++
+		mutex.Unlock()
+	}
 }
 
 func displayResult(result map[string]int) {

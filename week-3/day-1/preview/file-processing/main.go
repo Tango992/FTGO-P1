@@ -2,55 +2,58 @@ package main
 
 import (
 	"encoding/csv"
-	"fmt"
 	"os"
-	"strconv"
 	"strings"
+	"sync"
 )
 
-type Biodata struct {
-	Name string
-	Age int
-	Occupation string
-}
 
 func main() {
+	var wg sync.WaitGroup
+	var mutex sync.Mutex
 	file, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err.Error())
 	}
 	defer file.Close()
 
-	datas := CsvToStruct(file)
-	for i := range datas {
-		updateStruct(&datas[i])
+	records := CsvToSlice(file, &wg, &mutex)
+
+	outputFile, err := os.Create(os.Args[2])
+	if err != nil {
+		panic(err.Error())
 	}
-	fmt.Println(datas)
+
+	writer := csv.NewWriter(outputFile)
+	writer.WriteAll(records)
+
+	if err := writer.Error(); err != nil {
+		panic(err.Error())
+	}
 }
 
-func CsvToStruct(file *os.File) []Biodata {
-	var biodatas []Biodata
-	
-	records, err:= csv.NewReader(file).ReadAll()
+func CsvToSlice(file *os.File, wg *sync.WaitGroup, mutex *sync.Mutex) [][]string {
+	reader := csv.NewReader(file)
+	records, err := reader.ReadAll()
 	if err != nil {
 		panic(err)
 	}
-	for _, value := range records[1:] {
-		age, err := strconv.Atoi(value[1])
-		if err != nil {
-			panic(err.Error())
-		}
 
-		biodatas = append(biodatas, Biodata{
-			Name: value[0],
-			Age: age,
-			Occupation: value[2],
-		})
+	for i := range records {
+		if i == 0 {
+			continue
+		}
+		wg.Add(1)
+		go updateValue(i, &records, wg, mutex)
 	}
-	return biodatas
+	wg.Wait()
+	return records
 }
 
-func updateStruct(biodata *Biodata) {
-	biodata.Name = strings.ToUpper(biodata.Name)
-	biodata.Occupation = "Mr." + biodata.Occupation
+func updateValue(i int, records *[][]string, wg *sync.WaitGroup, mutex *sync.Mutex) {
+	defer wg.Done()
+	mutex.Lock()
+	(*records)[i][0] = strings.ToUpper((*records)[i][0])
+	(*records)[i][2] = "Mr." + (*records)[i][2]
+	mutex.Unlock()
 }
