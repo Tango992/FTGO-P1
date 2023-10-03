@@ -34,4 +34,4 @@ CREATE TABLE IF NOT EXISTS book_loans (
 
 CREATE INDEX idx_auth_id ON authors (author_id);
 
-CREATE INDEX idx_return_date ON book_loans (return_date, loan_date, book_id);
+CREATE INDEX idx_return_date ON book_loans (return_date, book_id);
