@@ -17,7 +17,8 @@ func main() {
 
 	// release2(db)
 	// release3(db)
-	release4a(db)
+	// release4a(db)
+	release4b(db)
 }
 
 func release2(db *sql.DB) {
@@ -101,10 +102,36 @@ func release4a(db *sql.DB) {
 			last_name string
 			position string
 		)
-		err = rows.Scan(&order_id, &table_number, &order_date, &status, &first_name, &last_name, &position)
-		checkErr(err)
+		if err = rows.Scan(&order_id, &table_number, &order_date, &status, &first_name, &last_name, &position); err != nil {
+			panic(err.Error())
+		}
 
 		fmt.Printf("%v\t%v\t%v\t%v\t%v %v\t%v\n", order_id, table_number, order_date, status, first_name, last_name, position)
+	}
+}
+
+func release4b(db *sql.DB) {
+	rows, err := db.Query("SELECT o.order_id, o.table_number, o.order_date, o.status, e.first_name, e.last_name, e.position, GROUP_CONCAT(mi.name) AS items, p.total_amount FROM Orders o JOIN Employees e ON o.employee_id = e.employee_id JOIN Payments p ON o.order_id = p.order_id JOIN OrderItems oi ON o.order_id = oi.order_id JOIN MenuItems mi ON oi.item_id = mi.item_id GROUP BY oi.order_id;")
+	checkErr(err)
+	defer rows.Close()
+
+	for rows.Next() {
+		var (
+			order_id int
+			table_number int
+			order_date string
+			status string
+			first_name string
+			last_name string
+			position string
+			items string
+			total_amount float32
+		)
+		if err = rows.Scan(&order_id, &table_number, &order_date, &status, &first_name, &last_name, &position, &items, &total_amount); err != nil {
+			panic(err.Error())
+		}
+
+		fmt.Println(order_id, table_number, order_date, status, first_name, last_name, position, items, total_amount)
 	}
 }
 
