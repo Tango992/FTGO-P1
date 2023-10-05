@@ -15,8 +15,9 @@ func main() {
 	err = db.Ping()
 	checkErr(err)
 
-	release2(db)
-	release3(db)
+	// release2(db)
+	// release3(db)
+	release4a(db)
 }
 
 func release2(db *sql.DB) {
@@ -85,7 +86,27 @@ func release3(db *sql.DB) {
 	fmt.Println("All sample data created successfully!")
 }
 
+func release4a(db *sql.DB) {
+	rows, err := db.Query("SELECT o.order_id, o.table_number, o.order_date, o.status, e.first_name, e.last_name, e.position FROM Orders o JOIN Employees e ON o.employee_id = e.employee_id;")
+	checkErr(err)
+	defer rows.Close()
 
+	for rows.Next() {
+		var (
+			order_id int
+			table_number int
+			order_date string
+			status string
+			first_name string
+			last_name string
+			position string
+		)
+		err = rows.Scan(&order_id, &table_number, &order_date, &status, &first_name, &last_name, &position)
+		checkErr(err)
+
+		fmt.Printf("%v\t%v\t%v\t%v\t%v %v\t%v\n", order_id, table_number, order_date, status, first_name, last_name, position)
+	}
+}
 
 func checkErr(err error) {
 	if err != nil {
