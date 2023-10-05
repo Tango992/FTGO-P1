@@ -59,4 +59,8 @@ use (
 	./week-2/day-3/presentation/kalkulator-pprof
 	./week-3/day-1/preview/file-processing
 	./week-3/day-1/preview/word-count
+	./week-3/day-4/basic
+	./week-3/day-4/database
+	./week-3/day-4/non-graded-15
+	./week-3/day-4/structured-non-graded-15
 )
