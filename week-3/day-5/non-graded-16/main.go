@@ -37,7 +37,7 @@ func main() {
 				fmt.Scanln(&email)
 	
 				if !emailRegex.MatchString(email) {
-					fmt.Printf("Invalid email address!\n\n")
+					fmt.Printf("Invalid email address!\n")
 					continue
 				}
 				break
@@ -53,7 +53,7 @@ func main() {
 				fmt.Scanln(&birth)
 	
 				if !birthRegex.MatchString(birth) {
-					fmt.Printf("Invalid date of birth!\n\n")
+					fmt.Printf("Invalid date of birth!\n")
 					continue
 				}
 				break
