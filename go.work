@@ -63,4 +63,6 @@ use (
 	./week-3/day-4/database
 	./week-3/day-4/non-graded-15
 	./week-3/day-4/structured-non-graded-15
+	./week-3/day-5/crypto
+	./week-3/day-5/non-graded-16
 )
