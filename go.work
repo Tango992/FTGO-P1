@@ -1,4 +1,4 @@
-go 1.21.1
+go 1.21.2
 
 use (
 	./week-1/day-1/hello
@@ -66,4 +66,5 @@ use (
 	./week-3/day-5/crypto
 	./week-3/day-5/non-graded-16
 	./week-3/misc/latihan-livecode3
+	./week-4/day-1/preview/gocli
 )
