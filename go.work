@@ -68,6 +68,7 @@ use (
 	./week-3/misc/latihan-livecode3
 	./week-4/day-1/preview/gocli
 	./week-4/day-2/dummy-main
+	./week-4/day-2/tastybites-moduletest
 	./week-4/day-2/test1
 	./week-4/day-2/test2
 	./week-4/day-2/testi
